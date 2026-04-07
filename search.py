@@ -277,12 +277,14 @@ def main():
     parser = argparse.ArgumentParser(description="Danish house search via Boliga.dk")
     parser.add_argument("--dry-run", action="store_true",
                         help="Show criteria and exit without fetching data")
+    parser.add_argument("--defaults", action="store_true",
+                        help="Skip interactive prompt and use default criteria (for CI)")
     args = parser.parse_args()
 
     print("🏠 Danish House Search")
     print("=" * 60)
 
-    criteria = prompt_criteria()
+    criteria = dict(DEFAULT_CRITERIA) if args.defaults else prompt_criteria()
     print_criteria(criteria)
 
     if args.dry_run:
