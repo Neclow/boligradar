@@ -1,5 +1,5 @@
 [workspace]
-authors = ["Neclow <neilclow24@gmail.com>"]
+authors = ["Neclow"]
 channels = ["conda-forge"]
 name = "housesearch"
 platforms = ["linux-64"]
